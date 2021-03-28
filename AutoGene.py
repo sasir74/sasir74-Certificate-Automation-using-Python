@@ -4,13 +4,13 @@ import os
 import csv
 
 df = pd.read_csv('list.csv')
-font = ImageFont.truetype('arial.ttf',70)
-font1 = ImageFont.truetype("./MLSJN.TTF",110)
+font = ImageFont.truetype('arial.ttf',40)
+font1 = ImageFont.truetype("./MLSJN.TTF",60)
 for index,j in df.iterrows():
-    img = Image.open('as.jpg')
+    img = Image.open('temp.png')
     draw = ImageDraw.Draw(img)
-    draw.text(xy=(1300,1200),text='{}'.format(j['name']),fill=(24,19 ,0),font=font1)
-    draw.text(xy=(860,1830),text='SYNERGINA',fill=(0,0,0),font=font)
-    draw.text(xy=(2120,1830),text='28/03/2021',fill=(0,0,0),font=font) #Change-Daily
-    img.save('pictures/{}.pdf'.format(j['name']))
-
+    draw.text(xy=(600,530),text='{}'.format(j['name']),fill=(24,19 ,0),font=font1)
+    draw.text(xy=(620,780),text='OPERATIONAL INTERN',fill=(0,0,0),font=font)
+    draw.text(xy=(185,930),text='SYNERGINA',fill=(0,0,0),font=font)
+    draw.text(xy=(1250,930),text='28/03/2021',fill=(0,0,0),font=font) #Change-Daily
+    img.save('pictures/{}.jpg'.format(j['name']))
